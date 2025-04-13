@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular-1.8.2/angular-1.8.2/angular.min.js"></script>
+    <script src="angular-1.8.2/angular-1.8.2/angular-route.js"></script>
+    <title>Yope Dictionary</title>
+</head>
+<body>
+    <div ng-app="dictApp">
+        <a href="#!dict">Start</a><br>
+        <a href="#!dash">Dashboard</a>
+        <div ng-view></div>
+    </div>
+</body>
+</html>
+
+<script>
+    var app = angular.module('dictApp', ['ngRoute']);
+    app.config(function($routeProvider){
+        $routeProvider
+        .when('/dict', {
+            templateUrl: 'dict.htm'
+            // template: '<h1>Yope Man => 1</h1>'
+        })
+        .when('/dash', {
+            // templateUrl: 'dash.htm'
+            template: '<h1>Yope Man => 2</h1>'
+        })
+    });
+</script>

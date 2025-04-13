@@ -1,0 +1,12 @@
+<script>
+  fetch('http://127.0.0.1:5000/to/amh/yope')
+  .then(function(response){
+    response.json().then(function(data) {
+      document.writeln(data[0].amh);
+      console.log(data);
+    });
+  })
+  .catch(function(e){
+    document.writeln(e);
+  });
+</script>
